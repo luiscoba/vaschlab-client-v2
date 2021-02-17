@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'vaschlab-client-v2';
   isCollapsed = true;
 
-  toggleMenu() {
+  toggleMenu(): void {
     this.isCollapsed = !this.isCollapsed;
   }
 }

@@ -10,59 +10,17 @@
     <table class="table table-sticky">
       <thead>
         <tr>
-          <th colspan="4"></th>
-          <th colspan="5">Current</th>
-          <th colspan="5">Projected</th>
-          <th colspan="2">Required</th>
-        </tr>
-        <tr>
           <th scope="col">
-            <span sortable="termCreatedDate" (sort)="onSort($event)">Date</span>
+            <span sortable="termCreatedDate" (sort)="onSort($event)">Productos</span>
           </th>
           <th scope="col">
-            <span sortable="termDescription" (sort)="onSort($event)">Description</span>
+            <span sortable="termDescription" (sort)="onSort($event)">Proveedor</span>
           </th>
           <th scope="col">
-            <span sortable="applied" (sort)="onSort($event)">Applied</span>
+            <span sortable="applied" (sort)="onSort($event)">Comprado</span>
           </th>
           <th scope="col">
-            <span sortable="loansTotalAmount" (sort)="onSort($event)">Loans Total Amount</span>
-          </th>
-          <th scope="col">
-            <span sortable="attemptedHours" (sort)="onSort($event)">Att. Hrs</span>
-          </th>
-          <th scope="col">
-            <span sortable="earnedHours" (sort)="onSort($event)">Earn. Hrs</span>
-          </th>
-          <th scope="col">
-            <span sortable="completionRate" (sort)="onSort($event)">Cmp. Rate</span>
-          </th>
-          <th scope="col">
-            <span sortable="gpa" (sort)="onSort($event)">Cum. GPA</span>
-          </th>
-          <th scope="col">
-            <span sortable="financialAidStatus" (sort)="onSort($event)">Status</span>
-          </th>
-          <th scope="col">
-            <span sortable="financialAidStatusProj" (sort)="onSort($event)">Status</span>
-          </th>
-          <th scope="col">
-            <span sortable="enrolledHours" (sort)="onSort($event)">Enr. Hrs</span>
-          </th>
-          <th scope="col">
-            <span sortable="droppedHours" (sort)="onSort($event)">Drp. Hrs</span>
-          </th>
-          <th scope="col">
-            <span sortable="attemptedHoursProj" (sort)="onSort($event)">Att. Hrs</span>
-          </th>
-          <th scope="col">
-            <span sortable="completionRateProj" (sort)="onSort($event)">Cmp. Rate</span>
-          </th>
-          <th scope="col">
-            <span sortable="gpaRequired" (sort)="onSort($event)">Min. Term GPA</span>
-          </th>
-          <th scope="col">
-            <span sortable="addlHoursRequired" (sort)="onSort($event)">Addl. Hrs</span>
+            <span sortable="loansTotalAmount" (sort)="onSort($event)">Inventario</span>
           </th>
         </tr>
       </thead>
@@ -70,39 +28,8 @@
         <tr *ngFor="let detail of studentDetails">
           <td scope="row" id="termCreatedDate">{{ detail.termCreatedDate }}</td>
           <td scope="row" id="termDescription">{{ detail.termDescription }}</td>
-          <td scope="row" id="applied">
-            <div class="form-check">
-              <input class="form-check-input position-static" type="checkbox" value="" readonly
-                [checked]="detail.applied ? true : null" />
-            </div>
-          </td>
-          <td scope="row" id="loansTotalAmount">
-            {{ detail.loansTotalAmount | currency }}
-          </td>
+          <td scope="row" id="loansTotalAmount"> {{ detail.loansTotalAmount | currency }} </td>
           <td scope="row" id="attemptedHours">{{ detail.attemptedHours }}</td>
-          <td scope="row" id="earnedHours">{{ detail.earnedHours }}</td>
-          <td scope="row" id="completionRate">{{ detail.completionRate }}%</td>
-          <td scope="row" id="gpa">{{ detail.gpa | number: "1.2-2" }}</td>
-          <td scope="row" id="financialAidStatus">
-            {{ detail.financialAidStatus }}
-          </td>
-          <td scope="row" id="financialAidStatusProj">
-            {{ detail.financialAidStatusProj }}
-          </td>
-          <td scope="row" id="enrolledHours">{{ detail.enrolledHours }}</td>
-          <td scope="row" id="droppedHours">{{ detail.droppedHours }}</td>
-          <td scope="row" id="attemptedHoursProj">
-            {{ detail.attemptedHoursProj }}
-          </td>
-          <td scope="row" id="completionRateProj">
-            {{ detail.completionRateProj }}%
-          </td>
-          <td scope="row" id="gpaRequired">
-            {{ detail.gpaRequired | number: "1.2-2" }}
-          </td>
-          <td scope="row" id="addlHoursRequired">
-            {{ detail.addlHoursRequired }}
-          </td>
         </tr>
       </tbody>
     </table>
@@ -116,9 +43,6 @@
       (change)="onPageSizeChange()">
       <option [ngValue]="5">5 items per page</option>
       <option [ngValue]="10">10 items per page</option>
-      <option [ngValue]="15">15 items per page</option>
-      <option [ngValue]="20">20 items per page</option>
-      <option [ngValue]="25">25 items per page</option>
     </select>
   </div>
 </form>

@@ -20,45 +20,41 @@
             <!-- The expand/collapse arrow for the student detail row. -->
           </th>
           <th scope="col" #tdStudentId>
-            <span sortable="studentSchoolId" (sort)="onSort($event)">Student Id</span><i
+            <span sortable="studentSchoolId" (sort)="onSort($event)">Cód global</span><i
               class="material-icons column-filtered" placement="bottom" container="body"
-              ngbTooltip="Filter by Student Id" (click)="
-                openTextFilterDialog(
-                  tdStudentId,
-                  'studentSchoolId',
-                  'Student Id'
-                )
-              " [ngClass]="getColumnFilterClass('studentSchoolId')">filter_list</i>
+              ngbTooltip="Filter by Cód global"
+              (click)="openTextFilterDialog(tdStudentId,'studentSchoolId','Cód global')"
+              [ngClass]="getColumnFilterClass('studentSchoolId')">filter_list</i>
           </th>
           <th scope="col" #tdFirstName>
-            <span sortable="firstName" (sort)="onSort($event)">First Name</span><i
+            <span sortable="firstName" (sort)="onSort($event)">Molécula</span><i
               class="material-icons column-not-filtered" placement="bottom" container="body"
-              ngbTooltip="Filter by First Name" (click)="
-                openTextFilterDialog(tdFirstName, 'firstName', 'First Name')
-              " [ngClass]="getColumnFilterClass('firstName')">filter_list</i>
+              ngbTooltip="Filter by Molécula" (click)="openTextFilterDialog(tdFirstName, 'firstName', 'Molécula')"
+              [ngClass]="getColumnFilterClass('firstName')">filter_list</i>
           </th>
           <th scope="col" #tdLastName>
-            <span sortable="lastName" (sort)="onSort($event)">Last Name</span><i class="material-icons"
-              placement="bottom" container="body" ngbTooltip="Filter by Last Name" (click)="
-                openTextFilterDialog(tdLastName, 'lastName', 'Last Name')
-              " [ngClass]="getColumnFilterClass('lastName')">filter_list</i>
+            <span sortable="lastName" (sort)="onSort($event)">Forma</span><i class="material-icons" placement="bottom"
+              container="body" ngbTooltip="Filter by Forma" (click)="
+              openTextFilterDialog(tdLastName, 'lastName', 'Forma')"
+              [ngClass]="getColumnFilterClass('lastName')">filter_list</i>
           </th>
           <th scope="col" #tdStudentEmail>
-            <span sortable="studentEmail" (sort)="onSort($event)">Student Email</span><i class="material-icons"
-              placement="bottom" container="body" ngbTooltip="Filter by Student Email" (click)="
-                openTextFilterDialog(
-                  tdStudentEmail,
-                  'studentEmail',
-                  'Student Email'
-                )
-              " [ngClass]="getColumnFilterClass('studentEmail')">filter_list</i>
+            <span sortable="studentEmail" (sort)="onSort($event)">Detalle forma</span><i class="material-icons"
+              placement="bottom" container="body" ngbTooltip="Filter by Detalle forma" (click)="
+              openTextFilterDialog(tdStudentEmail,'studentEmail','Detalle forma')"
+              [ngClass]="getColumnFilterClass('studentEmail')">filter_list</i>
           </th>
-          <th scope="col">
+          <th>Concentración</th>
+          <th>Presentación</th>
+          <th>Cantidad</th>
+          <th>Precio referencial</th>
+          <th>Subtotal referencial</th>
+          <!-- <th scope="col">
             <i class="material-icons" placement="bottom" container="body" ngbTooltip="Add student"
               (click)="onAddStudentClick()">add_box</i>
             <i class="material-icons" placement="bottom" container="body" ngbTooltip="Delete selected"
               (click)="onDeleteSelectedClick()">delete_sweep</i>
-          </th>
+          </th> -->
         </tr>
       </thead>
       <tbody>
@@ -68,8 +64,7 @@
             <input type="text" class="form-control" [formControl]="studentSchoolIdFormControl" style="width: 140px" />
             <div *ngIf="
                 studentSchoolIdFormControl.invalid &&
-                (studentSchoolIdFormControl.dirty ||
-                  studentSchoolIdFormControl.touched)
+                (studentSchoolIdFormControl.dirty || studentSchoolIdFormControl.touched)
               " class="text-danger">
               <small>{{ getErrorMessage(studentSchoolIdFormControl) }}</small>
             </div>
@@ -187,6 +182,11 @@
                 </div>
               </span>
             </td>
+            <td>ehhh</td>
+            <td>ehhh</td>
+            <td>55555.00</td>
+            <td>pre</td>
+            <td>sub</td>
             <td id="commandColumn" scope="row">
               <span *ngIf="!isEditingStudent(student.studentId)">
                 <i class="material-icons" placement="bottom" container="body" ngbTooltip="Edit student"

@@ -481,7 +481,7 @@ export class StudentsListComponent implements AfterViewInit {
    *
    * @param param0 the sort event
    */
-  onSort({ column, direction }: SortEvent) {
+  onSort({ column, direction }: SortEvent): void {
     // resetting other headers
     this.headers.forEach((header) => {
       if (header.sortable !== column) {

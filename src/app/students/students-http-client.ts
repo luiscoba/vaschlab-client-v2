@@ -779,7 +779,7 @@ export class StudentsHttpClient {
    * @param sortColumn the column to sort on
    * @param sortDirection the sort direction
    */
-  compareValues(sortColumn: string, sortDirection: string) {
+  compareValues(sortColumn: string, sortDirection: string): any {
     return (a: Student, b: Student) => {
       if (!a.hasOwnProperty(sortColumn) || !b.hasOwnProperty(sortColumn)) {
         return 0;
