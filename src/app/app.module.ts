@@ -6,10 +6,9 @@ import { AppComponent } from './app.component';
 import { DialogsModule } from './dialogs/dialogs.module';
 import { StudentsModule } from './students/students.module';
 import { TableFiltersModule } from './table-filters/table-filters.module';
-import { InformationComponent } from './information/information.component';
 
 @NgModule({
-  declarations: [AppComponent, InformationComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     NgbModule,
